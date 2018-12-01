@@ -1,0 +1,10 @@
+<textarea id="1" value="https://liveyoutube.herokuapp.com/embed"></textarea>
+<button onclick="copy()">copy</button>
+<script>
+var text=document.getElementById('1').value;
+function copy(){
+	text.select();
+	document.execCommand('copy');
+}
+
+</script>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://liveyoutube.herokuapp.com/</loc>
+  <lastmod>2018-09-13T14:38:54+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://liveyoutube.herokuapp.com/user/go/to/about</loc>
+  <lastmod>2018-09-13T14:38:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://liveyoutube.herokuapp.com/UC-lHJZR3Gqxm24_Vd_AJ5Yw</loc>
+  <lastmod>2018-09-13T14:38:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://liveyoutube.herokuapp.com/UCq-Fj5jknLsUf-MWSy4_brA</loc>
+  <lastmod>2018-09-13T14:38:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://liveyoutube.herokuapp.com/UCqwUrj10mAEsqezcItqvwEw</loc>
+  <lastmod>2018-09-13T14:38:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://liveyoutube.herokuapp.com/user/go/to/contact</loc>
+  <lastmod>2018-09-13T14:38:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://liveyoutube.herokuapp.com/user/go/to/privacy</loc>
+  <lastmod>2018-09-13T14:38:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

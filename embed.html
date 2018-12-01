@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title>Real-Time Subscriber Counter |Live YouTube stats</title>
+	<meta name="theme-color" content="#000000">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./mobile-style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.js"></script>
+	<link rel="stylesheet"href="../odometer/odometer-theme-default.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- 	<script src="./script.js"></script>
+ -->	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<style>
+.default-card{
+	border:1px solid lightgrey;
+	border-radius: 8px;
+	box-shadow: 2px grey;
+}
+
+</style>
+<body ng-app="named">
+<div class="default-card" style="padding:10px;"ng-controller="embeded" >
+			<h2 ng-bind="title"></h2>		<h1 class="badge badge-danger" >Live</h1>
+			<a href="#"><img alt="thumbail" ng-src="{{data.snippet.thumbnails.default.url}}"class="thumbnail"ng-repeat="data in responsed"style="float: right"></a>
+			<h2 >Subscribers</h2>
+			<small ng-bind="info"></small>
+<div style="font-family: 'Roboto', sans-serif;font-size:45px;"class="odometer"ng-bind="subscribers"></div><br>
+<small><a href="https://liveyoutube.herokuapp.com">Real-Time Subscriber Counter |Live YouTube stats</a></small>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+const initialstring="https://www.googleapis.com/youtube/v3/search?part=snippet&&maxResults=40&q=";
+const laststring="&key=AIzaSyC4zJwg96JC6YEYr9OQkmveR4ELgnqsZ5A";
+const videoinitial="https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=";
+const channelinitial="https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=";
+var app=angular.module('named',[]);
+app.controller('embeded',function($scope,$http,$interval,$location){
+var channelid=$location.absUrl().split('/')[4];
+console.log(channelid);
+$interval(function(){
+			$http.get(channelinitial+channelid+laststring).then((response)=>{
+				$scope.responsed=response.data.items;
+				$scope.title=response.data.items[0].snippet.title; 
+				$scope.subscribers=numberWithCommas(response.data.items[0].statistics.subscriberCount);	
+				});
+			// $scope.subscribers=response.data.items[0].statistics.subscriberCount;
+		},1000);
+});
+function numberWithCommas(number) {
+    var parts = number.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+}
+
+</script>

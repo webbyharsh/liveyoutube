@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<title>Compare | Real-Time Subscriber Counter | Live YouTube stats</title>
+	<meta name="theme-color" content="#000000">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./mobile-style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.js"></script>
+	<link rel="stylesheet"href="./odometer/odometer-theme-default.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="./script.js"></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<meta name="Description" content="Get Live subscriber count of your favourite youtuber with this simple and fast analytics tool available. Also get live video views statistics at realtime. Know Live stats of Youtube videos and channels.">
+	<meta name="Keywords" content="subscriber count,live sub count,live subscriber count,youtube stats,live count,realtime youtube subscriber count,live counter,youtube live count,pewdiepie vs tseries,live subs count">
+	
+	<meta name="msvalidate.01" content="A719BC0012B8E2FEEA0C23A4728DFAF0" />
+</div>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117522064-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117522064-3');
+</script>
+
+</head>
+<body>
+	<a href="/"><img src="./brand.png" style="display: block;margin :0 auto;width:120px;height:80px;"></a>
+<form method="post" action="/" style="padding:20px;">
+  		<div class="input-group">
+    	<input type="text" class="form-control" style=""placeholder="Search" name="query">
+    	<div class="input-group-btn">
+      	<button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      	</button>
+    	</div>
+  		</div>
+	</form>
+<hr>
+	<div class="container" ng-app="compare" ng-controller='comparectrl'>
+		<form method="get" action="/user/go/to/compare-result">
+			<div class="row">
+		<div id="first"class="col">
+			<div class="form-group">
+  			<label for="usr">Channel Name</label>
+  			<input type="text" class="form-control" id="usr"name="fc">
+			</div>
+		</div>
+		<div id="second"class="col">
+			<div class="form-group">
+  			<label for="usr">Channel Name</label>
+  			<input type="text" class="form-control" id="usr"name="sc">
+			</div>
+		</div>
+		</div>
+		<input class="btn btn-success" type="submit" value="Compare...">
+	</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+	<title>Real-Time Subscriber Counter |Live YouTube stats</title>
+	<meta name="theme-color" content="#000000">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./mobile-style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.js"></script>
+	<link rel="stylesheet"href="./odometer/odometer-theme-default.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="./script.js"></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<meta name="Description" content="Get Live subscriber count of your favourite youtuber with this simple and fast analytics tool available. Also get live video views statistics at realtime. Know Live stats of Youtube videos and channels.">
+	<meta name="Keywords" content="subscriber count,live sub count,live subscriber count,youtube stats,live count,realtime youtube subscriber count,live counter,youtube live count,pewdiepie vs tseries,live subs count,live subs graph">
+	<meta name="propeller" content="b558c3785a1b2e11ec4a00711e364b48"></div>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117522064-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117522064-3');
+</script>
+
+
+
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3532788233867218",
+    enable_page_level_ads: true
+  });
+</script> -->
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/">YouTube Live Stats</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+    	<li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="/user/go/to/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#popular">Popular Searches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="user/go/to/compare">Compare</a>
+      </li> 
+    </ul>
+  </div> 
+</nav>
+
+<!-- COPY PASTED NAVBAR HTML
+ -->
+<style>
+.logo{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width:200px;
+    height:150px;
+}
+</style>
+
+
+<div class="container">
+<img class="logo"style="-webkit-user-select: none;" alt="logo of the company"src="./brand.png">
+</div>
+
+<!-- searchbar
+ -->	<div class="wrap"id="searchbar">
+   <div class="search">
+   	<form method="post" action="/">
+      <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search"name="query">
+  <div class="input-group-append">
+    <button class="btn btn-success" type="submit"><i class="fa fa-search"></button></i> 
+  </div>
+</div>
+    </form>
+   </div>
+	</div>
+
+<!-- searchbar
+ -->
+
+<!-- <form action="/trend"method="post"style="position: relative;top:50%;left:30%;">
+<div >
+	<button type="submit" class="btn"> <i class="fa fa-bolt"style="color:green;font-size: 40px;"></i></button>
+</div>
+</form> -->
+
+
+
+<div class="container" ng-app="big">
+	<a name="popular">
+	<h2 class=""style="text-align: center">Popular Searches</h2>
+	<div class="row panel-group" style="padding:5px;">
+		<div class="col-sm-12  col-md-4" style="border :hidden"ng-controller="bigctr1" >
+			
+			<div class="default-card" style="padding:10px;">
+			<h2 ng-bind="title"></h2>		<h1 class="badge badge-danger" >Live</h1>
+			<a href="#"><img alt="thumbail" ng-src="{{data.snippet.thumbnails.default.url}}"class="thumbnail"ng-repeat="data in resp"style="float: right"></a>
+			<h2 >Subscribers</h2>
+			<small ng-bind="info"></small>
+<div style="font-family: 'Roboto', sans-serif;font-size:45px;"class="odometer"ng-bind="subscribers"></div>			</div>
+
+		</div>
+			<div class="col-sm-12  col-md-4" style="border :hidden"ng-controller="bigctr2">
+			<div class="default-card" style="padding:10px;">
+			<h2 ng-bind="title"></h2><h1 class="badge badge-danger" >Live</h1>
+			<a href="user/pewdiepie"><img alt="thumbail"ng-src="{{data.snippet.thumbnails.default.url}}"class="thumbnail"ng-repeat="data in resp2"style="float: right"></a>
+			<h2 >Subscribers</h2>
+			<small ng-bind="info"></small>
+<div style="font-family: 'Roboto', sans-serif;font-size:45px;"class="odometer"ng-bind="subscribers"></div>			</div>
+		</div>
+<div class="col-sm-12  col-md-4" style="border:hidden"ng-controller="bigctr3">
+			<div class="default-card" style="padding:10px;">
+			<h2 ng-bind="title"></h2><h1 class="badge badge-danger" >Live</h1>
+			<a href="user/tseries"><img alt="thumbail"ng-src="{{data.snippet.thumbnails.default.url}}"class="thumbnail"ng-repeat="data in resp3"style="float: right"></a>
+			<h2 >Subscribers</h2>
+			<small ng-bind="info"></small>
+			<div style="font-family: 'Roboto', sans-serif;font-size:45px;"class="odometer"ng-bind="subscribers"></div>		</div>
+		</div>
+<div class="col-sm-12  col-md-4" style="border:hidden"ng-controller="bigctr4">
+			<div class="default-card" style="padding:10px;">
+			<h2 ng-bind="title"></h2><h1 class="badge badge-danger" >Live</h1>
+			<a href="#"><img alt="thumbail"ng-src="{{data.snippet.thumbnails.default.url}}"class="thumbnail"ng-repeat="data in resp4"style="float: right"></a>
+			<h2 >Subscribers</h2>
+			<small ng-bind="info"></small>
+<div style="font-family: 'Roboto', sans-serif;font-size:45px;"class="odometer"ng-bind="subscribers"></div>			</div>	</div>
+
+<div class="col-sm-12  col-md-4" style="border:hidden"ng-controller="bigctr5">
+			<div class="default-card" style="padding:10px;">
+			<h2 ng-bind="title"></h2><h1 class="badge badge-danger" >Live</h1>
+			<img alt="thumbail"ng-src="{{data.snippet.thumbnails.default.url}}"class="thumbnail"ng-repeat="data in resp5"style="float: right">
+			<h2 >Subscribers</h2>
+			<small ng-bind="info"></small>
+<div style="font-family: 'Roboto', sans-serif;font-size:45px;"class="odometer"ng-bind="subscribers"></div>			</div>	</div>
+<div class="col-sm-12  col-md-4" style="border:hidden"ng-controller="bigctr6">
+			<div class="default-card" style="padding:10px;">
+			<h2 ng-bind="title"></h2><h1 class="badge badge-danger" >Live</h1>
+			<a href="user/bbkivines"><img alt="thumbail"ng-src="{{data.snippet.thumbnails.default.url}}"class="thumbnail"ng-repeat="data in resp6"style="float: right"></a>
+			<h2 >Subscribers</h2>
+			<small ng-bind="info"></small>
+<div style="font-family: 'Roboto', sans-serif;font-size:45px;"class="odometer"ng-bind="subscribers"></div>			</div>	</div>
+
+
+</div>
+	</a>
+	<h3 style="text-align:center;padding-top: 10px;">PewDiePie vs T-Series</h3>
+	<div class=""style="padding-bottom: 30px;padding-left: -15px;"ng-controller="data-plot">
+		<div class="row">
+		<div class="col-md-6"id="chartContainer2" style="height: 300px; width: 95%;"></div>
+		<div class="col-md-6"id="chartContainer3" style="height: 300px; width: 95%;"></div>
+</div>
+
+</div>
+
+</div>
+<div id="SC_TBlock_593922" class="SC_TBlock">loading...</div> 
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5c0017bd4b87f600115957a5&product=inline-follow-buttons' async='async'></script>
+
+<!--  -->
+<div class="sharethis-inline-follow-buttons"></div>
+
+<style>
+.default-card{
+	border:1px solid lightgrey;
+	border-radius: 8px;
+	box-shadow: 2px grey;
+}
+
+</style>
+<div class="container">
+	<h1 style="font-family: 'Roboto',sans-serif;">Get Live Subscriber count and realtime stats of a video</h1>
+	<h3>How to use this?</h3>
+	<h5 style="font-family: 'Roboto',sans-serif;">The tool presented here can simply be used to look for any YouTube video or any YouTube channel to see their realTime statistics. If you are a content creator this might be very useful. There are many tools outside here but they seem to be more complicated. If you are interested in something that is very simple to use and at the same time very useful then you are already at right place. </h5>
+	<h3>Some words about YouTube</h3>
+	<h5 style="font-family: 'Roboto',sans-serif;">YouTube is an American video sharing company ehich came into service in February 2005. Google bought it on November 2006 for US$1.65 billion. As of February 2017, there were more than 400 hours of content uploaded to YouTube each minute, and one billion hours of content being watched on YouTube everyday. As of August 2018, the website is ranked as the second most popular website in the world, according to <a href="https://alexa.com/siteinfo">alexa siteinfo </a><br>YouTube primarily uses the VP9 and H.264/MPEG-4 AVC video formats, and the Dynamic Adaptive Streaming iver HTTP protocol<a href="https://wikipedia.org/wiki/YouTube"> Data ref</a></h5>
+	<h5>Search some query in the search bar at the top of the page. It will return 40 results suitable to query. It works according to YouTube search  algorithm and it is not age restricted.
+	</h5>
+	<h2>Your searches will never be monitered</h2>
+	<h5>Unlike searching on platforms like socialblade and others who constantly monitor their searches here you are totally alone.You can search anything and your searches will never be monitered</h5>
+	<h2 style="font-weight: bold">You can contribute to development of this WebApp</h2>
+	<h4>If you have some good idea regarding what improvements can be done to this webapp you're welcome. Feel free to tell me your ideas regarding and I will try to implement the idea. This website is just in its premature model and any new suggestions will surely be taken. You can contact me <a href="/user/go/to/contact">here</h4></a>
+	<h2>New Features are coming soon...</h2>
+</div>
+</div>
+</div>
+<footer>
+<div style="width:100%;background-color:black;padding:30px;">
+<img style="-webkit-user-select: none;" alt="MLM apps"src="/logo.png">
+<img src="./download.png"style="float: right;width:100px;width:80px;"><br><br>
+<h6 style="text-align: center;color:white">All the data is provided by YouTube © 2018</h6>
+<a href="/user/go/to/privacy"style="text-decoration: none;color:grey;text-align:center;" >Privacy Policy</a>
+
+</div>
+
+</div>
+
+
+</footer>
+
+<<script type="text/javascript">
+    (sc_adv_out = window.sc_adv_out || []).push({
+        id : "593922",
+        domain : "n.pclicc1.com"
+    });
+</script>
+<script type="text/javascript" src="https://st-n.pclicc1.com/js/a.js"></script>
+
+</body>
+</html>

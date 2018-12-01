@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<title>Contact form</title>
+</head>
+<body>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<a href="/"><img src="http://localhost:3000/brand.png" style="display: block;margin :0 auto;width:120px;height:80px;"></a>
+<form method="post" action="/" style="padding:20px;">
+  		<div class="input-group">
+    	<input type="text" class="form-control" style=""placeholder="Search" name="query">
+    	<div class="input-group-btn">
+      	<button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      	</button>
+    	</div>
+  		</div>
+	</form>
+<div class="fb-comments"data-colorscheme="light" data-href="https://mlmapps.herokuapp.com/work" data-width="550" data-numposts="5"></div>
+</body>
